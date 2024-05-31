@@ -14,9 +14,6 @@ except:
 
 chatbotquestiontype = [
     {
-        "Question": "Inquiry about internships?"
-    },
-    {
         "Question": "Want to connect."
     },
     {
@@ -40,7 +37,10 @@ submit = st.button("Analyze")
 
 
 if submit:
-    prompt= f"""You are a Chatbot, Give sutable ansers for : {Query} . answer only to the query and dont give any other information There are no internship avaliable , If want to connect mail lahanearna9@gmail.com , services provided : machine learning software and models , website creation. it facing any issue: mail on lahanearnav9@gmail.com your issue"""
+    prompt = f"""You are a support chatbot for an e-commerce website. Provide suitable answers for: {Query}. Answer only the query without giving any additional information. For product inquiries, order status, and returns, please provide the necessary details or steps to follow. 
+    For any issues, contact us at support@ecommerce.com. 
+    For business inquiries or collaboration, email us at business@ecommerce.com. 
+    Services provided include: product sales, order tracking, and customer support."""
     result = llm.invoke(prompt)
     print(result.content)
 
