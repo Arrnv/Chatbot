@@ -12,24 +12,12 @@ except:
     llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key = key)
  
 
-chatbotquestiontype = [
-    {
-        "Question": "Want to connect."
-    },
-    {
-        "Question": "Services provided"
-    },
-    {
-        "Question": "facing Issues"
-    },{
-        "Question": "types of product"
-    }
-]
 
 st.title("AI- Query Chatbot")
 st.text("Test model ChatBots")
-
-Query = st.selectbox("Select your query",[items["Question"] for items in chatbotquestiontype])
+text = st.text_input(
+    label="Query"
+)
 
 submit = st.button("Analyze")
 
@@ -37,7 +25,7 @@ submit = st.button("Analyze")
 
 
 if submit:
-    prompt = f"""You are a support chatbot for an e-commerce website. Provide suitable answers for: {Query}. Answer only the query without giving any additional information. For product inquiries, order status, and returns, please provide the necessary details or steps to follow. 
+    prompt = f"""You are a support chatbot for an e-commerce website. Provide suitable answers for: {text}. Answer only the query without giving any additional information. For product inquiries, order status, and returns, please provide the necessary details or steps to follow. 
     For any issues, contact us at support@ecommerce.com. 
     For business inquiries or collaboration, email us at business@ecommerce.com. 
     Services provided include: product sales, order tracking, and customer support."""
