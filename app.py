@@ -14,7 +14,7 @@ except:
 
 
 st.title("AI- Query Chatbot")
-st.text("Test model ChatBots")
+st.text("Ask me ChatBots")
 text = st.text_input(
     label="Query"
 )
